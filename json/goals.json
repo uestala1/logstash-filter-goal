@@ -1,0 +1,79 @@
+{
+	"data": [
+		{
+			"type": "@type",
+			"comparison": "match",
+			"pattern": "event",
+			"options": [
+				{
+					"type": "@category",
+					"comparison": "match",
+					"pattern": "buscador",
+					"value": "dm_buscador_interno"
+				},
+				{
+					"type": "@category",
+					"comparison": "match",
+					"pattern": "addthis",
+					"options": [
+						{
+							"type": "@action",
+							"comparison": "match",
+							"pattern": "email",
+							"value": "dm_compartir_email"
+						},
+						{
+							"type": "@action",
+							"comparison": "regex",
+							"pattern": "(?!email)",
+							"value": "dm_compartir_redes_sociales"
+						}
+					]
+				},
+				{
+					"type": "@category",
+					"comparison": "match",
+					"pattern": "email",
+					"value": "dm_contacto_mailto"
+				},
+				{
+					"type": "@category",
+					"comparison": "match",
+					"pattern": "descarga",
+					"value": "dm_descarga"
+				},
+				{
+					"type": "@category",
+					"comparison": "match",
+					"pattern": "mostrar",
+					"value": "dm_mostrar_telefono_fax"
+				}
+			]
+		},
+		{
+			"type": "@type",
+			"comparison": "match",
+			"pattern": "page",
+			"options": [
+				{
+					"type": "@category",
+					"comparison": "regex",
+					"pattern": "(.*)#([a-z]+)-DMForm-(?!Contacto|Newsletter)(.*)",
+					"value": "dm_formularios"
+				},
+				{
+					"type": "@category",
+					"comparison": "regex",
+					"pattern": "(.*)#enviar-DMForm-Contacto(.*)",
+					"value": "dm_formularios_contacto"
+				},
+				{
+					"type": "@category",
+					"comparison": "regex",
+					"pattern": "(.*)#enviar-DMForm-Newsletter(.*)",
+					"value": "dm_formularios_newsletter"
+				}
+			]
+		}
+	]
+}
